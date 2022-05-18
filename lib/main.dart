@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:blocpatternex/flutter_bloc+equatable+ui_changes/data_bloc.dart';
 import 'package:blocpatternex/flutter_bloc+equatable+ui_changes/data_event.dart';
 import 'package:blocpatternex/flutter_bloc+equatable+ui_changes/data_state.dart';
+import 'package:blocpatternex/flutter_bloc_blocprovider/second_color_bloc.dart';
 
 import 'our_bloc/background_color/ColorBloc.dart';
 import 'package:blocpatternex/flutter_bloc+equatable+modal/appbar_color_bloc.dart';
@@ -12,7 +13,6 @@ import 'package:blocpatternex/flutter_bloc+equatable+modal/appbar_color_state.da
 import 'our_bloc/background_color/colorevent.dart';
 import 'our_bloc/counter/counter_bloc.dart';
 import 'our_bloc/counter/counter_event.dart';
-import 'file:///C:/Users/Abdeldjalil_Di/Desktop/flutter_projects/myfirstapp2/bloc_pattern_ex/lib/flutter_bloc_blocprovider/second_color_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -100,7 +100,7 @@ class _TestingState extends State<Testing> {
                           ),
                           Text(
                             '${snapshot.data}',
-                            style: Theme.of(context).textTheme.display1.copyWith(
+                            style: TextStyle(
                               color: state.color,
                             ),
                           ),
@@ -289,6 +289,8 @@ class _TestingState extends State<Testing> {
                                   size: 155,
                                 ),
                               );
+                            else
+                              return Container();
                           },
                         ),
                       ),
