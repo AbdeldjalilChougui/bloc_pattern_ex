@@ -4,6 +4,7 @@ import 'package:blocpatternex/flutter_bloc+equatable+ui_changes/data_bloc.dart';
 import 'package:blocpatternex/flutter_bloc+equatable+ui_changes/data_event.dart';
 import 'package:blocpatternex/flutter_bloc+equatable+ui_changes/data_state.dart';
 import 'package:blocpatternex/flutter_bloc_blocprovider/second_color_bloc.dart';
+import 'package:blocpatternex/my_home_page.dart';
 
 import 'our_bloc/background_color/ColorBloc.dart';
 import 'package:blocpatternex/flutter_bloc+equatable+modal/appbar_color_bloc.dart';
@@ -32,32 +33,13 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key}) : super(key: key);
 
+class MainScreen extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MainScreenState createState() => _MainScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  final secondColorBloc = SecondColorBloc();
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => secondColorBloc,
-      child: Testing(),
-    );
-  }
-}
-
-
-class Testing extends StatefulWidget {
-  @override
-  _TestingState createState() => _TestingState();
-}
-
-class _TestingState extends State<Testing> {
+class _MainScreenState extends State<MainScreen> {
   final bloc = CounterBloc();
   final colorBloc = ColorBloc();
   final appBarColorBloc = AppBarBloc();
